@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Load the URDF model into the parameter server -->
+  <param name="robot_description" textfile="$(find rviz_assignment)/urdf/two_link_robot.urdf" />
+
+  <!-- Start RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rviz_assignment)/two_link_robot.rviz" required="true"  />
+
+  <!-- Optional: Add a static transform publisher -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_pub" args="0 0 0.25 0 0 0 1 base_link link2" />
+</launch>
+

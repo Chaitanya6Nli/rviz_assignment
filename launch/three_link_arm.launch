@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Load URDF into parameter server -->
+    <param name="robot_description" command="$(find xacro)/xacro $(find rviz_assignment)/urdf/three_link_arm.urdf" />
+
+    <!-- Launch joint_state_publisher_gui to move joints -->
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
+
+    <!-- Launch Robot State Publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+    <!-- Launch RViz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rviz_assignment)/three_link_arm.rviz"/>
+</launch>
+

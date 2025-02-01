@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="single_wheel_robot">
+
+    <!-- Base of the Robot -->
+    <link name="base_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.1"/>
+            <geometry>
+                <box size="0.6 0.4 0.2"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0 0 1 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <!-- Single Wheel -->
+    <link name="wheel_link">
+        <visual>
+            <origin rpy="1.57 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.7 0.7 0.7 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <!-- Revolute Joint to connect wheel to base -->
+    <joint name="wheel_joint" type="revolute">
+        <parent link="base_link"/>
+        <child link="wheel_link"/>
+        <origin xyz="-0.15 0.225 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit effort="10" velocity="5" lower="-1.57" upper="1.57"/>
+    </joint>
+
+</robot>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot name="two_link_robot_arm">
+  <!-- Link 1: Base Link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="1 1 0.5"/> <!-- Base is a rectangular block -->
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/> <!-- Blue color -->
+      </material>
+    </visual>
+  </link>
+
+  <!-- Link 2: Cylindrical Link -->
+  <link name="link2">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="1"/> <!-- Cylindrical geometry -->
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/> <!-- Green color -->
+      </material>
+    </visual>
+  </link>
+
+  <!-- Joint: Revolute Joint between base_link and link2 -->
+  <joint name="joint1" type="revolute">
+    <parent link="base_link"/>
+    <child link="link2"/>
+    <origin xyz="0 0 0.25" rpy="0 0 0"/> <!-- Joint position -->
+    <axis xyz="0 0 1"/> <!-- Rotation around Z-axis -->
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/> <!-- Joint limits -->
+  </joint>
+</robot>
+

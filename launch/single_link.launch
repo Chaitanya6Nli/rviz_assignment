@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Run RViz with the configuration file -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rviz_assignment)/single_link.rviz" required="true" /> 
+
+  <!-- Load the URDF file into the parameter server -->
+  <param name="robot_description" textfile="$(find rviz_assignment)/urdf/single_link.urdf"/>
+
+  <!-- Run a dummy joint_state_publisher node (if needed) -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+</launch>

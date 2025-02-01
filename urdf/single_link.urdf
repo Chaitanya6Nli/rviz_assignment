@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot name="single_link_robot">
+  <link name="link1">
+    <visual>
+      <geometry>
+        <box size="1 1 1"/> <!-- A cube of 1x1x1 dimensions -->
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/> <!-- Blue color -->
+      </material>
+    </visual>
+  </link>
+</robot>
+

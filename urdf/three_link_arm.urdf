@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<robot name="three_link_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Base Link (Fixed Cylinder) -->
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.2"/>
+            </geometry>
+            <material name="Gray">
+                <color rgba="0.5 0.5 0.5 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <!-- Link 1 (First Arm Segment - Vertical) -->
+    <link name="link1">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.5"/>
+            </geometry>
+            <origin xyz="0 0 0.25" rpy="0 0 0"/>
+            <material name="Red">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <!-- Joint 1 (Shoulder - Rotates Around Z) -->
+    <joint name="joint1" type="revolute">
+        <parent link="base_link"/>
+        <child link="link1"/>
+        <origin xyz="0 0 0.1" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.57" upper="1.57" effort="10.0" velocity="1.0"/>
+    </joint>
+
+    <!-- Link 2 (Second Arm Segment - Extends Outward) -->
+    <link name="link2">
+        <visual>
+            <geometry>
+                <box size="0.4 0.05 0.05"/>
+            </geometry>
+            <origin xyz="0.2 0 0" rpy="0 0 0"/>
+            <material name="Green">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <!-- Joint 2 (Elbow - Rotates Around Y for Up/Down Motion) -->
+    <joint name="joint2" type="revolute">
+        <parent link="link1"/>
+        <child link="link2"/>
+        <origin xyz="0 0 0.5" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-1.57" upper="1.57" effort="10.0" velocity="1.0"/>
+    </joint>
+
+    <!-- Link 3 (Third Arm Segment - Extends Outward) -->
+    <link name="link3">
+        <visual>
+            <geometry>
+                <box size="0.3 0.05 0.05"/>
+            </geometry>
+            <origin xyz="0.15 0 0" rpy="0 0 0"/>
+            <material name="Blue">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <!-- Joint 3 (Wrist - Rotates Around Y) -->
+    <joint name="joint3" type="revolute">
+        <parent link="link2"/>
+        <child link="link3"/>
+        <origin xyz="0.4 0 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-1.57" upper="1.57" effort="10.0" velocity="1.0"/>
+    </joint>
+
+</robot>
+

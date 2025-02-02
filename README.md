@@ -6,13 +6,32 @@ The `rviz_assignment` package is designed to provide a framework for visualizing
 ## Package Structure
 ```
 rviz_assignment
+├── Config
+│   ├── base_with_wheel.launch.rviz
+│   ├── four_wheeled_robot.rviz
+│   ├── single_link.rviz
+│   ├── three_link_arm.rviz
+│   └── two_link_robot.rviz
 ├── launch
-│   └── example.launch       # Launch file for starting nodes and setting parameters
+│   ├── base_with_wheel.launch
+│   ├── four_wheeled_robot.launch
+│   ├── single_link.launch
+│   ├── three_link_arm.launch
+│   └── two_link_robot.launch
 ├── urdf
-│   └── example.urdf         # URDF model of the robot/system
+│   ├── base_with_wheel.urdf
+│   ├── four_wheeled_robot.urdf
+│   ├── single_link.urdf
+│   ├── three_link_arm.urdf
+│   └── two_link_robot.urdf
 ├── output
-│   └── example.txt          # Output data or logs generated during execution
-└── README.md                # Documentation for the package
+│   ├── single_link.png
+│   ├── two_link_robot.png
+│   ├── three_link_arm.png
+│   ├── base_with_wheel.png
+│   └── four_wheeled_robot.png
+├── Assignment Task on Rviz_MSPA.docx
+└── README.md
 ```
 
 ## About Me

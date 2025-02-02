@@ -7,7 +7,7 @@ The `rviz_assignment` package is designed to provide a framework for visualizing
 ```
 rviz_assignment
 ├── Config
-│   ├── base_with_wheel.launch.rviz
+│   ├── base_with_wheel.rviz
 │   ├── four_wheeled_robot.rviz
 │   ├── single_link.rviz
 │   ├── three_link_arm.rviz
@@ -38,8 +38,8 @@ rviz_assignment
 My name is Chaitanya Belekar, a second-year Robotics and Automation Engineering undergrad from K.K.Wagh Institute of Engineering of Education and Research, Nashik.
 
 ### Contact
-For any queries or issues, you can contact me at [chaitanya.belekar@example.com](mailto:chaitanya.belekar@example.com).
+For any queries or issues, you can contact me at [chaitanyabelekar59@gmail.com](mailto:chaitanyabelekar59@gmail.com).
 
 ---
 
-This README file provides an overview of the `rviz_assignment` package and some personal information about myself.
+This README file provides an overview of the `rviz_assignment` package.
